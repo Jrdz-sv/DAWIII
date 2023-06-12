@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Productos')
+@section('title', 'Clientes')
 
 @section('content')
     <h1 class="text-center">Cliente</h1>
@@ -8,13 +8,10 @@
     <hr>
     {{-- Boton de agregar cliente --}}
     <br>
-    
-        {{-- <a class="btn btn-success btn-sm" href="/Cliente/create">Añadir Cliente</a> --}}
-    
     <div class="container mx-auto">
         <a class="btn btn-success btn-sm" href="/Cliente/create">Añadir Cliente</a></div>
     <br>
-    
+
     <table class="container table table-hover table-bordered mt-2">
         {{-- Encabezados --}}
         <tr class="table-secondary ">
