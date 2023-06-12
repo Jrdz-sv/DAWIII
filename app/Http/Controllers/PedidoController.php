@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PedidoModel;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -17,8 +18,16 @@ class PedidoController extends Controller
     public function index()
     {
         //
-    }
+        $pedido = PedidoModel::select(
+            "pedido.Id_Pedido",
+            "pedido.FechaPedido",
+            "pedido.FechaEntrega",
+            "cliente.Nombre as Id_cliente"
+        )->join("cliente", "cliente.Id_Cliente", "=", "pedido.Id_cliente")->get();
 
+        return view('/Pedido/show')->with(['pedido' => $pedido]);
+    }
+// Id_cliente referencia en la tabla pedido 
     /**
      * Show the form for creating a new resource.
      */

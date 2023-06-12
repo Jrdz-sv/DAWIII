@@ -37,10 +37,3 @@
         @endforeach
     </table>
 @endsection
-
-@section('scripts')
-    {{-- SweetAlert
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    {{-- JS --}}
-    {{-- <script src="{{asset('js/product.js')}}"></script>  --}}
-@endsection

@@ -51,7 +51,8 @@ Route::delete('/Cliente/destroy/{id}', [ClienteController::class, 'destroy']);
 
 
 // -------------------RUTAS PARA CRUD TABLA PEDIDOS ----------------
-
+// ver cliente 
+Route::get('/Pedido/show', [App\Http\Controllers\PedidoController::class, 'index']);
 
 
 

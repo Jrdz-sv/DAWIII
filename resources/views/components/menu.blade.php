@@ -30,7 +30,7 @@
                     @endif
                 @else
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
                   </li>
 
                   <li class="nav-item">
