@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <h1 class="text-center">Pedido</h1>
+    <h1 class="text-center">Pedidoo</h1>
     <h5 class="text-center">Listado de Pedidos</h5>
     <hr>
     {{-- Boton de agregar cliente --}}
