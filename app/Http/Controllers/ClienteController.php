@@ -71,11 +71,11 @@ class ClienteController extends Controller
      */
 
      
-    public function edit(ClienteModel $cliente)
+    public function edit($Id_cliente)
     {
+        $cliente = ClienteModel::find($Id_cliente);
         //
-        $cliente = ClienteModel::all();
-        return view('/Cliente/update')->with(['cliente' => $cliente]);
+        return view('Cliente/update')->with(['cliente' => $cliente]);
 
     }
 
@@ -86,13 +86,11 @@ class ClienteController extends Controller
     {
         //
         $data = request()->validate([
-            'Id_Cliente'=> 'required',
             'Nombre' => 'required',
             'Apellido' => 'required',
             'Fecha_Nac' => 'required'
         ]);
 
-        $client->Id_Cliente = $data['Id_Cliente'];
         $client->Nombre = $data['Nombre'];
         $client->Apellido = $data['Apellido'];
         $client->Fecha_Nac = $data['Fecha_Nac'];

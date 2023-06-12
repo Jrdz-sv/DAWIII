@@ -14,22 +14,11 @@
 <div class="container">
     <form action="/Cliente/update/{{$cliente->Id_Cliente}}" method="POST">
         @csrf
+        @method('PUT')
 
-    @method('PUT')
-    <div class="row mb-4">
-        <label for="Id_Cliente" class="col-md-4 col-form-label text-md-end">{{ __('ID') }}</label>
-        <div class="col-5">
-            <input type="text" class="form-control" name="Nombre" value="{{$cliente->Id_Cliente}}">
-            @error('Id_Cliente')
-            <span class="invalid-feedback d-block" role="alert">
-                <strong>{{$message}}</strong>
-            </span>
-            @enderror
-        </div>
-    </div>
 
     <div class="row mb-4">
-        <label for="Nombre" class="col-md-4 col-form-label text-md-end">{{ __('Nombre') }}</label>
+        <label for="Nombre" class="col-md-4 col-form-label text-md-end">Nombre</label>
         <div class="col-5">
             <input type="text" class="form-control" name="Nombre" value="{{$cliente->Nombre}}">
             @error('Nombre')
@@ -41,7 +30,7 @@
     </div>
 
     <div class="row mb-4">
-        <label for="Apellido" class="col-md-4 col-form-label text-md-end">{{ __('Apellido') }}</label>
+        <label for="Apellido" class="col-md-4 col-form-label text-md-end">Apellido</label>
         <div class="col-5">
             <input type="text" class="form-control" name="Apellido" value="{{$cliente->Apellido}}">
             @error('Apellido')
@@ -53,7 +42,7 @@
     </div>
 
     <div class="row mb-4">
-        <label for="Fecha_Naci" class="col-md-4 col-form-label text-md-end">{{ __('Fecha Nacimiento') }}</label>
+        <label for="Fecha_Naci" class="col-md-4 col-form-label text-md-end">Fecha de Nacimiento</label>
         <div class="col-5 mb-4">
             <input type="date" class="form-control" name="Fecha_Nac" value="{{$cliente->Fecha_Nac}}">
             @error('Fecha_Nac')
