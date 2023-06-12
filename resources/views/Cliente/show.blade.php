@@ -29,9 +29,13 @@
             <td>{{$item->Apellido}}</td>
             <td>{{$item->Fecha_Nac}}</td>
             <td>
-                <a class="btn btn-primary btn-sm" href="/Cliente/edit/{{$item->Id_Cliente}}">Modificar</a>
-                {{-- boton para eliminar --}}
-                <button class="btn btn-danger btn-sm" url="/Cliente/destroy/{{$item->Id_Cliente}}" onclick="destroy(this)" token="{{csrf_token()}}">Eliminar</button>
+                <form action="/Cliente/destroy/{{$item->Id_Cliente}}" method="POST">
+                    <a class="btn btn-primary btn-sm" href="/Cliente/edit/{{$item->Id_Cliente}}">Modificar</a>
+                    @csrf
+                    @method('DELETE')
+                    {{-- Delete with submit and ID_Cliente using method POST in a form --}}
+                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                </form>                                                                
             </td>
         </tr>
         @endforeach
