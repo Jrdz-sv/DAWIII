@@ -110,10 +110,10 @@ class ClienteController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($Id_Cliente)
+    public function destroy($id)
     {
 
-        $cliente = ClienteModel::find($Id_Cliente);
+        $cliente = ClienteModel::find($id);
         //
         //Eliminar producto con id que recibimos
         $cliente->delete();
