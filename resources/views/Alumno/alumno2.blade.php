@@ -18,7 +18,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico II</h1></b></center>
+                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico III</h1></b></center>
                     <center><h1 class="pt-4 pb-2" style="color: hsl(232, 91%, 35%)">Carlos Jonathan Rodriguez Tobar TDSV11C</h1></center><br>
                     <center><h1 class="pt-2 pb-2" style="color: hsl(232, 91%, 35%)">142722</h1></center>
 

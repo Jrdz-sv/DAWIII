@@ -26,6 +26,9 @@ Route::get('/Alumno/alumno1', function () {
 Route::get('/Alumno/alumno2', function () {
     return view('Alumno/alumno2');
 });
+// ver cliente 
+Route::get('/Cliente/show', [App\Http\Controllers\ClienteController::class, 'index']);
+
 
 
 Auth::routes();

@@ -9,7 +9,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                {{-- <div class="card-header">{{ __('Parcial3') }} --}}
                     <img src="../img/logoITCA.PNG" class="logo" style="width: 100%;">
                 </div>
 
@@ -19,7 +18,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico II</h1></b></center>
+                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico III</h1></b></center>
                     <center><h1 class="pt-4 pb-2" style="color: #621db2">Estefany Azucena Benitez Vasquez TDSV11C</h1></center><br>
                     <center><h1 class="pt-2 pb-2" style="color: #621db2">142722</h1></center>
 

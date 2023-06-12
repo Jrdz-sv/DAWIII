@@ -18,7 +18,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico II</h1></b></center>
+                    <center><h1 style="color: rgb(0, 0, 0)"><b>Practico III</h1></b></center>
                     <center><a href="/Alumno/alumno1" style="text-decoration:none"><h2>Estefany Azucena Benitez Vasquez</h2></a></center> <br>
                     <center><a href="/Alumno/alumno2" style="text-decoration:none "><h2>Carlos Jonathan Rodriguez Tobar</h2></a></center>
                 
