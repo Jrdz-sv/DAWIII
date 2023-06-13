@@ -20,8 +20,7 @@
             <td>Fecha Pedido</td>
             <td>Fecha Entrega</td>
             <td>Observaciones</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
+            <td colspan="2">Cliente</td>
             <td>Acciones</td>
         </tr>
 
