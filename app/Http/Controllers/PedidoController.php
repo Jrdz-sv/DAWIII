@@ -22,6 +22,7 @@ class PedidoController extends Controller
             "pedido.Id_Pedido",
             "pedido.FechaPedido",
             "pedido.FechaEntrega",
+            "cliente.Id_Cliente as ID",
             "cliente.Nombre as Nombre",
             "cliente.Apellido as Apellido"
         )->join("cliente", "cliente.Id_Cliente", "=", "pedido.Id_cliente")->get();
@@ -36,6 +37,10 @@ class PedidoController extends Controller
     public function create()
     {
         //
+        $pedido = PedidoModel::all();
+
+        return view('/Pedido/create')->with(['pedido' => $pedido]);
+
     }
 
     /**
@@ -44,6 +49,18 @@ class PedidoController extends Controller
     public function store(Request $request)
     {
         //
+        $data = request()->validate([
+            'FechaPedido' => 'required',
+            'FechaEntrega' => 'required',
+            'Observaciones' => 'required',
+            'Id_cliente'=>'required'
+        ]);
+
+        //Insertar la informacion
+        PedidoModel::create($data);
+
+        //Redireccionar
+        return redirect('Pedido/show');
     }
 
     /**
@@ -73,8 +90,14 @@ class PedidoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy( $id)
     {
         //
+        // $cliente = PedidoModel::find($id);
+        $pedido=PedidoModel::find($id);
+
+        $pedido->delete();
+
+        return redirect('/Pedido/show');;
     }
 }

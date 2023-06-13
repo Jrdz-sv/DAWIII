@@ -16,19 +16,19 @@
         {{-- Encabezados --}}
         <tr class="table-secondary ">
             <td>C&oacute;digo</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Fecha Nacimiento</td>
-            <td>Acciones</td>
+            <td class="text-center">Nombre</td>
+            <td class="text-center">Apellido</td>
+            <td class="text-center">Fecha Nacimiento</td>
+            <td class="text-center">Acciones</td>
         </tr>
 
         @foreach ($cliente as $item)
         <tr>
-            <td>{{$item->Id_Cliente}}</td>
-            <td>{{$item->Nombre}}</td>
-            <td>{{$item->Apellido}}</td>
-            <td>{{$item->Fecha_Nac}}</td>
-            <td>
+            <td >{{$item->Id_Cliente}}</td>
+            <td class="text-center">{{$item->Nombre}}</td>
+            <td class="text-center">{{$item->Apellido}}</td>
+            <td class="text-center">{{$item->Fecha_Nac}}</td>
+            <td class="text-center">
                 <form action="/Cliente/destroy/{{$item->Id_Cliente}}" method="POST">
                     <a class="btn btn-primary btn-sm" href="/Cliente/edit/{{$item->Id_Cliente}}">Modificar</a>
                     @csrf

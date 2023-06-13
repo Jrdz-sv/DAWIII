@@ -51,15 +51,21 @@ Route::delete('/Cliente/destroy/{id}', [ClienteController::class, 'destroy']);
 
 
 // -------------------RUTAS PARA CRUD TABLA PEDIDOS ----------------
-// ver cliente 
-Route::get('/Pedido/show', [App\Http\Controllers\PedidoController::class, 'index']);
+// ver Pedido 
+Route::get('/Pedido/show', [PedidoController::class, 'index']);
 
+//Crear Pedido (FrontEnd)
+Route::get('/Pedido/create', [PedidoController::class, 'create']);
 
+//Crear Pedido(BackEnd)
+Route::post('/Pedido/store', [PedidoController::class, 'store']);
 
-
+//Eliminar Pedido(BackEnd)
+Route::delete('/Pedido/destroy/{id}', [PedidoController::class, 'destroy']);
 
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
