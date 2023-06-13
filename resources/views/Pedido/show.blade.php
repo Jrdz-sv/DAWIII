@@ -20,7 +20,8 @@
             <td>Fecha Pedido</td>
             <td>Fecha Entrega</td>
             <td>Observaciones</td>
-            <td>Cliente</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
             <td>Acciones</td>
         </tr>
 
@@ -30,7 +31,8 @@
             <td>{{$item->FechaPedido}}</td>
             <td>{{$item->FechaEntrega}}</td>
             <td>{{$item->Observaciones}}</td>
-            <td>{{$item->Id_cliente}}</td>
+            <td>{{$item->Nombre}}</td>
+            <td>{{$item->Apellido}}</td>
             <td>
                 <a class="btn btn-primary btn-sm" href="/Pedido/edit/{{$item->Id_Cliente}}">Modificar</a>
                 {{-- boton para eliminar --}}

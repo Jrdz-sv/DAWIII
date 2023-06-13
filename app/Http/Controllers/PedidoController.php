@@ -22,8 +22,10 @@ class PedidoController extends Controller
             "pedido.Id_Pedido",
             "pedido.FechaPedido",
             "pedido.FechaEntrega",
-            "cliente.Nombre as Id_cliente"
+            "cliente.Nombre as Nombre",
+            "cliente.Apellido as Apellido"
         )->join("cliente", "cliente.Id_Cliente", "=", "pedido.Id_cliente")->get();
+
 
         return view('/Pedido/show')->with(['pedido' => $pedido]);
     }
