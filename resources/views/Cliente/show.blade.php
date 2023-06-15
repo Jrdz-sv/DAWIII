@@ -14,7 +14,7 @@
 
     <table class="container table table-hover table-bordered mt-2">
         {{-- Encabezados --}}
-        <tr class="table-secondary ">
+        <tr class="table-dark ">
             <td>C&oacute;digo</td>
             <td class="text-center">Nombre</td>
             <td class="text-center">Apellido</td>
