@@ -70,8 +70,15 @@ Route::put('/Pedido/update/{pedido}', [PedidoController::class, 'update']);
 //Eliminar Pedido(BackEnd)
 Route::delete('/Pedido/destroy/{id}', [PedidoController::class, 'destroy']);
 
-//Report Pedido
-Route::get('/reports/Pedido', [ReportController::class, 'pedidoreport']);
+//Report Cliente-Pedido
+Route::get('/reports/Pedido', [ReportController::class, 'cliente_pedidoreport']);
+
+//Report Todos los Pedido
+Route::get('/reports/Pedidos', [ReportController::class, 'pedidoreport']);
+
+//Report Clientes
+Route::get('/reports/Cliente', [ReportController::class, 'clientereport']);
+
 
 
 

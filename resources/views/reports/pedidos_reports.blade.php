@@ -18,7 +18,7 @@
             <th scope="col">Fecha Pedido</th>
             <th scope="col">Fecha Entrega</th>
             <th scope="col">Observaciones</th>
-            <th colspan="2" scope="col">Cliente</th>
+           
           </tr>
         </thead>
         <tbody>
@@ -29,8 +29,6 @@
                 <td>{{$item['FechaPedido']}}</td>
                 <td>{{$item['FechaEntrega']}}</td>
                 <td>{{$item['Observaciones']}}</td>
-                <td>{{$item['Nombre']}}</td>
-                <td>{{$item['Apellido']}}</td>
               </tr>
             @endforeach
           

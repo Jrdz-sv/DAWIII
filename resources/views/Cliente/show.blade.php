@@ -9,7 +9,8 @@
     {{-- Boton de agregar cliente --}}
     <br>
     <div class="container mx-auto">
-        <a class="btn btn-success btn-sm" href="/Cliente/create">Añadir Cliente</a></div>
+        <a class="btn btn-success btn-sm" href="/Cliente/create">Añadir Cliente</a>
+        <a class="btn btn-success btn-sm" href="/reports/Cliente">Reportes</a></div>
     <br>
 
     <table class="container table table-hover table-bordered mt-2">
