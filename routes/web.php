@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\PedidoController;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +61,17 @@ Route::get('/Pedido/create', [PedidoController::class, 'create']);
 //Crear Pedido(BackEnd)
 Route::post('/Pedido/store', [PedidoController::class, 'store']);
 
+//Modificar Pedido (FrontEnd)
+Route::get('/Pedido/edit/{pedido}', [PedidoController::class, 'edit']);
+
+//Modificar Pedido (BackEnd)
+Route::put('/Pedido/update/{pedido}', [PedidoController::class, 'update']);
+
 //Eliminar Pedido(BackEnd)
 Route::delete('/Pedido/destroy/{id}', [PedidoController::class, 'destroy']);
+
+//Report Pedido
+Route::get('/reports/Pedido', [ReportController::class, 'pedidoreport']);
 
 
 

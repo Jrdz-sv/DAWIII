@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PedidoModel;
+use App\Models\ClienteModel;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -18,17 +19,16 @@ class PedidoController extends Controller
     public function index()
     {
         //
-        $pedido = PedidoModel::select(
+        $pedidos = PedidoModel::select(
             "pedido.Id_Pedido",
             "pedido.FechaPedido",
             "pedido.FechaEntrega",
-            "cliente.Id_Cliente as ID",
+            "pedido.Observaciones",
             "cliente.Nombre as Nombre",
             "cliente.Apellido as Apellido"
         )->join("cliente", "cliente.Id_Cliente", "=", "pedido.Id_cliente")->get();
-
-
-        return view('/Pedido/show')->with(['pedido' => $pedido]);
+    
+        return view('Pedido/show')->with(['pedido' => $pedidos]);
     }
 // Id_cliente referencia en la tabla pedido 
     /**
@@ -74,17 +74,35 @@ class PedidoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($Id_Pedido)
     {
-        //
+        $pedido = PedidoModel::find($Id_Pedido);
+        $clientes = ClienteModel::all();
+
+        return view('Pedido/update', compact('pedido', 'clientes'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $Id_Pedido)
     {
-        //
+        $data = $request->validate([
+            'FechaPedido' => 'required',
+            'FechaEntrega' => 'required',
+            'Observaciones' => 'nullable',
+            'Id_Cliente' => 'required',
+        ]);
+
+        $pedido = PedidoModel::find($Id_Pedido);
+
+        $pedido->FechaPedido = $data['FechaPedido'];
+        $pedido->FechaEntrega = $data['FechaEntrega'];
+        $pedido->Observaciones = $data['Observaciones'];
+        $pedido->Id_Cliente = $data['Id_Cliente'];
+        $pedido->save();
+
+        return redirect('/Pedido/show');
     }
 
     /**
@@ -98,6 +116,6 @@ class PedidoController extends Controller
 
         $pedido->delete();
 
-        return redirect('/Pedido/show');;
+        return redirect('/Pedido/show');
     }
 }
